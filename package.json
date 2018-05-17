@@ -1,0 +1,18 @@
+{
+  "name": "react-native-kakao-opensdk",
+  "version": "0.0.1",
+  "keywords": [
+    "react-native",
+    "kakao",
+    "kakao-open-sdk",
+    "kakao",
+    "kakao open-sdk",
+    "ios",
+    "android"
+  ],
+  "description": "The react-native bridge of kakao open-sdk",
+  "license": "MIT",
+  "peerDependencies": {
+    "react-native": ">=0.44.0"
+  }
+}
