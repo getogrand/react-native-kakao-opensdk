@@ -80,13 +80,4 @@ RCT_REMAP_METHOD(sessionOpen,
   return dispatch_get_main_queue();
 }
 
-- (NSDictionary *)constantsToExport
-{
-  return @{
-           @"KOAuthTypeTalk": @(KOAuthTypeTalk),
-           @"KOAuthTypeStory": @(KOAuthTypeStory),
-           @"KOAuthTypeAccount": @(KOAuthTypeAccount)
-           };
-}
-
 @end
