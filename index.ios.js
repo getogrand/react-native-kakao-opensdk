@@ -3,7 +3,7 @@
  * @flow
  */
 import NativeModules from "react-native";
-const { NativeRCTKakaoSDK } = NativeModules;
+const NativeRCTKakaoSDK = NativeModules.NativeModules.KakaoSDK;
 
 /**
  * High-level docs for the RCTKakaoSDK iOS API can be written here.
