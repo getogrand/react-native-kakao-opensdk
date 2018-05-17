@@ -6,6 +6,7 @@
 //
 
 #import <React/RCTConvert.h>
+#import <KakaoOpenSDK/KakaoOpenSDK.h>
 
 @interface RCTConvert (KOAuthType)
 
