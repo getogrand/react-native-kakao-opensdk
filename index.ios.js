@@ -2,7 +2,7 @@
  * @providesModule RCTKakaoSDK
  * @flow
  */
-var NativeRCTKakaoSDK = require('NativeModules').KakaoSDK
+var NativeRCTKakaoSDK = require('react-native/NativeModules').KakaoSDK
 
 /**
  * High-level docs for the RCTKakaoSDK iOS API can be written here.
