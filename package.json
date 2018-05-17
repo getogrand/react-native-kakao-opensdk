@@ -12,6 +12,7 @@
   ],
   "description": "The react-native bridge of kakao open-sdk",
   "license": "MIT",
+  "main": "index",
   "peerDependencies": {
     "react-native": ">=0.44.0"
   }
