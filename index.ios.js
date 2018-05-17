@@ -2,7 +2,8 @@
  * @providesModule RCTKakaoSDK
  * @flow
  */
-var NativeRCTKakaoSDK = require('react-native/NativeModules').KakaoSDK
+import NativeModules from "react-native";
+const { NativeRCTKakaoSDK } = NativeModules;
 
 /**
  * High-level docs for the RCTKakaoSDK iOS API can be written here.
@@ -13,21 +14,21 @@ var RCTKakaoSDK = {
   KOAuthTypeStory: NativeRCTKakaoSDK.KOAuthTypeStory,
   KOAuthTypeAccount: NativeRCTKakaoSDK.KOAuthTypeAccount,
   sessionClose: function() {
-    return NativeRCTKakaoSDK.sessionClose()
+    return NativeRCTKakaoSDK.sessionClose();
   },
   sessionOpen: function(authTypes) {
     if (!authTypes || authTypes.length === 0) {
       authTypes = [
         NativeRCTKakaoSDK.KOAuthTypeTalk,
         NativeRCTKakaoSDK.KOAuthTypeStory,
-        NativeRCTKakaoSDK.KOAuthTypeAccount,
-      ]
+        NativeRCTKakaoSDK.KOAuthTypeAccount
+      ];
     }
-    return NativeRCTKakaoSDK.sessionOpen(authTypes)
+    return NativeRCTKakaoSDK.sessionOpen(authTypes);
   },
   test: function() {
-    NativeRCTKakaoSDK.test()
-  },
-}
+    NativeRCTKakaoSDK.test();
+  }
+};
 
-module.exports = RCTKakaoSDK
+module.exports = RCTKakaoSDK;
