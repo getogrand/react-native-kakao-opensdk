@@ -49,15 +49,6 @@ public class KakaoSDKModule extends ReactContextBaseJavaModule {
     return "KakaoSDK";
   }
 
-  @Override
-  public Map<String, Object> getConstants() {
-    final Map<String, Object> constants = new HashMap<>();
-    constants.put("KOAuthTypeTalk", AuthType.KAKAO_TALK);
-    constants.put("KOAuthTypeStory", AuthType.KAKAO_STORY);
-    constants.put("KOAuthTypeAccount", AuthType.KAKAO_ACCOUNT);
-    return constants;
-  }
-
   @ReactMethod
   public void closeSession(Promise promise) {
     Session session = Session.getCurrentSession();
