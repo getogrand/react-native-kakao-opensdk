@@ -1,6 +1,11 @@
 package me.heybeauty.rctkakaosdk;
 
+import android.app.Activity;
+import android.content.Intent;
+
+import com.facebook.react.bridge.ActivityEventListener;
 import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.BaseActivityEventListener;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -32,16 +37,21 @@ import java.util.Map;
 public class KakaoSDKModule extends ReactContextBaseJavaModule {
   private static final String LOG_TAG = "KakaoSDKModule";
 
-  private final KakaoSDKAdapter kakaoSDKAdapter;
+  private KakaoSDKAdapter kakaoSDKAdapter;
+  private final ActivityEventListener activityEventListener = new BaseActivityEventListener() {
+    @Override
+    public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent intent) {
+      kakaoSDKAdapter = new KakaoSDKAdapter(activity);
+      try {
+        KakaoSDK.init(kakaoSDKAdapter);
+      } catch (KakaoSDK.AlreadyInitializedException e) {
+        // do nothing
+      } // other exceptions will be thrown
+      }
+  };
 
   public KakaoSDKModule(ReactApplicationContext reactContext) {
     super(reactContext);
-    this.kakaoSDKAdapter = new KakaoSDKAdapter(reactContext.getCurrentActivity());
-    try {
-      KakaoSDK.init(this.kakaoSDKAdapter);
-    } catch (KakaoSDK.AlreadyInitializedException e) {
-      // do nothing
-    } // other exceptions will be thrown
   }
 
   @Override
